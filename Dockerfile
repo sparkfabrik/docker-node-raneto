@@ -27,5 +27,6 @@ ADD ./conf/run.sh /usr/local/bin/run.sh
 RUN chmod +x /usr/local/bin/run.sh
 
 # Let's go
-EXPOSE 3000
+ENV PORT=80
+EXPOSE 80
 ENTRYPOINT ["/usr/local/bin/run.sh"]
