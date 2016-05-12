@@ -6,7 +6,8 @@ ENV RANETO_VERSION 0.9.0
 ENV RANETO_INSTALL_DIR /srv/raneto
 
 # Get Raneto from sources
-RUN curl -SLO "https://github.com/gilbitron/Raneto/archive/$RANETO_VERSION.tar.gz" \
+RUN cd /tmp \
+    && curl -SLO "https://github.com/gilbitron/Raneto/archive/$RANETO_VERSION.tar.gz" \
     && mkdir -p $RANETO_INSTALL_DIR \
     && tar -xzf "$RANETO_VERSION.tar.gz" -C $RANETO_INSTALL_DIR --strip-components=1 \
     && rm "$RANETO_VERSION.tar.gz"
@@ -16,10 +17,10 @@ RUN npm install --global gulp-cli
 
 # Install and configure Raneto
 WORKDIR $RANETO_INSTALL_DIR
-RUN npm install
-RUN rm -f $RANETO_INSTALL_DIR/example/config.default.js
 COPY ./conf/config.default.js /srv/raneto/example/config.default.js
-RUN gulp
+RUN npm install \
+    && rm -f $RANETO_INSTALL_DIR/example/config.default.js \
+    && gulp
 
 # Add the starter script and make it executable
 ADD ./conf/run.sh /usr/local/bin/run.sh
