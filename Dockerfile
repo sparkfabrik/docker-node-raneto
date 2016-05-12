@@ -17,10 +17,10 @@ RUN npm install --global gulp-cli
 
 # Install and configure Raneto
 WORKDIR $RANETO_INSTALL_DIR
-COPY ./conf/config.default.js /srv/raneto/example/config.default.js
 RUN npm install \
     && rm -f $RANETO_INSTALL_DIR/example/config.default.js \
     && gulp
+COPY ./conf/config.default.js /srv/raneto/example/config.default.js
 
 # Add the starter script and make it executable
 ADD ./conf/run.sh /usr/local/bin/run.sh
