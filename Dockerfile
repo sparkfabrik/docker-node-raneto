@@ -1,4 +1,4 @@
-FROM node:argon
+FROM node:6.1.0-slim
 MAINTAINER Paolo Pustorino <paolo.pustorino@sparkfabrik.com>
 
 WORKDIR /tmp
