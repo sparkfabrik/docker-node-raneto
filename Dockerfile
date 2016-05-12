@@ -1,8 +1,7 @@
 FROM node:6.1.0-slim
 MAINTAINER Paolo Pustorino <paolo.pustorino@sparkfabrik.com>
 
-WORKDIR /tmp
-ENTRYPOINT ["run.sh"]
+EXPOSE 3000
 
 # Install Raneto in project directory
 ENV RANETO_VERSION 0.9.0
