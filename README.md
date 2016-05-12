@@ -19,11 +19,11 @@ If you want to change your Raneto configuration, use this image as base and copy
 
 To run the image issue:
 
-`docker run -p 3000:3000 -v </path/to/your/content>:/srv/raneto/content -d sparkfabrik/raneto`
+`docker run -p 80:80 -v </path/to/your/content>:/srv/raneto/content -d sparkfabrik/raneto`
 
 You can then browse your content visiting:
 
-    http://localhost:3000
+    http://localhost:80
 
 ## Contributions and todo
 
