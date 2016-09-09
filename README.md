@@ -10,16 +10,20 @@ While a Raneto base image is available at the time of writing (https://github.co
 
 ## Content
 
-The last version of this image is based on Node 6.1.0-slim image, with global gulp-cli and Raneto 0.9.0.
+The last version of this image is based on Node 6.1.0-slim image, with global gulp-cli and a modified version of [Raneto 0.9.0](https://github.com/sparkfabrik/Sparketo).
 
 ## Usage
 
 This image works mounting a local documentation folder in a volume inside the container, and exposing Raneto on port 3000 (standard).
-If you want to change your Raneto configuration, use this image as base and copy a new configuration file in `/srv/raneto/example/config.default.js`.
+It also supports a custom configuration file for Raneto.
 
-To run the image issue:
+To run the image mounting only documentation's folder issue:
 
-`docker run -p 80:80 -v </path/to/your/content>:/srv/raneto/content -d sparkfabrik/raneto`
+`docker run -p 80:80 -v </path/to/your/content>:/srv/raneto/content -d sparkfabrik/docker-node-raneto`
+
+To run the image with documentation's folder and a custom config file issue:
+
+`docker run -p 80:80 -v </path/to/your/content-folder>:/srv/raneto/content -v </path/to/your/config-file>:/srv/raneto/config.js  -d sparkfabrik/docker-node-raneto`
 
 You can then browse your content visiting:
 
