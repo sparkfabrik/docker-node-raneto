@@ -27,12 +27,19 @@ You can then browse your content visiting:
 
 ## Contributions and todo
 
+**EDIT**: most of the points below derive by the current state of Raneto's repository. Until the porting to npm won't be polished and over, putting effort in this repository to fix what is basically window-dressing is useless.
+
+We left this repo here for public references and opened a new repo with a customized version of Raneto to implement our company's distribution of the service.
+
+You can take inspiration from this repo https://github.com/sparkfabrik/Sparketo for how to tailer Raneto to your needs.
+
 * PRs are welcome, I'll try to review them as quickly as possible.
-* I'm not fond at all of the way configuration is included. It would be top to have a default config and a local one in content directory. I'm not that skilled in node.js to know hot to achieve this ATM. If anyone has a good idea, PR it to me.
-* Currently only standard theme is available in the image. Being able to dinamically read new themes from local volume would be great. Same as above.
+* -I'm not fond at all of the way configuration is included. It would be top to have a default config and a local one in content directory. I'm not that skilled in node.js to know hot to achieve this ATM. If anyone has a good idea, PR it to me.-
+* -Currently only standard theme is available in the image. Being able to dinamically read new themes from local volume would be great. Same as above.-
 
 ## Credits
 
 Thanks to chanux who inspired me a bit with his [Chanux Raneto Docker image](https://github.com/chanux/docker-raneto).
 Thanks to my colleague Paolo Mainardi who forced me to consider Docker as an actual tool, explained me lot of black magic and gave me great advices on sucha small Dockerfile.
+Thanks to my colleague Francesco Benigno for his (almost) solo work on Sparketo.
 Raneto team for providing a simple and effective tool for this widespread need. Exactly what I was looking for! :)
